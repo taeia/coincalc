@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script>
+			function dayCalc(){
+				money = Number(document.querySelector('#money').value)
+				percent = Number(document.querySelector('#percent').value)
+				targetMoney = Number(document.querySelector('#targetMoney').value)
+				day = 0
+				while(money < targetMoney){
+					money += money*0.01*percent
+					day += 1
+					document.querySelector('#results').innerHTML += day + "일: "+money+"<br>"
+					console.log(money)
+					console.log(day)
+				}
+				// while(money < targetMoney){
+				// 	money += money*0.05
+				// 	day += 1
+				// 	console.log(money)
+				// 	console.log(day)
+				// }
+			}
+		</script>
+		<style>
+			.girdBy2{
+				display:grid;
+				grid-template-columns: 310px 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Coin Calc</h2>
+
+		<div class="girdBy2">
+		  <div id ='values'>
+			  <label>현재 금액</label>
+			  <input type="text" id="money" style="width: auto;display:block" placeholder="KRW">
+			  <lable>하루 이익</lable>
+			  <input type="text" id="percent" style="width: auto;display:block" placeholder="%">
+			  <lable>목표 금액</lable>
+			  <input type="text" id="targetMoney" style="width: auto;display:block; margin-bottom: 30px;" placeholder="KRW">
+
+			  <input type="button" value="계산" onclick="dayCalc()">
+		  </div>
+		  <div>
+			  <h3 style="margin: 0%;">result</h3>
+			  <div id="results" style="border: 1px solid gray; background-color: aliceblue; width: 400px;">
+			  </div>
+		  </div>
+		</div>
+
+		<div id='hello'>
+
+		</div>
+	</body>
+</html>
+
+
